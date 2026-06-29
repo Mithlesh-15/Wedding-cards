@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon-royal: #7A0019;
+  --color-gold-royal: #D4AF37;
+  --color-gold-light: #F6E29C;
+  --color-ivory: #FFF8EE;
+  --color-cream: #F9F3E8;
+  --color-dark-brown: #4B2E2A;
+  
+  --font-hindi: "Noto Serif Devanagari", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-vibes: "Great Vibes", cursive;
+}
+
+/* Base resets & scroll behavior */
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-cormorant);
+  background-color: var(--color-ivory);
+  color: var(--color-dark-brown);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-maroon-royal);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-royal);
+}
+
+/* Flickering Flame animation for Diyas */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 4px rgba(255, 174, 25, 0.7));
+  }
+  50% {
+    transform: scale(1.08) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 174, 25, 0.95));
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1.2s infinite alternate ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Pulse animation for hearts and overlays */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Gold text gradient */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FFF1AC 0%, #D4AF37 40%, #AA7C11 80%, #FFF1AC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Deep Red/Maroon text gradient */
+.maroon-text-gradient {
+  background: linear-gradient(135deg, #A30022 0%, #7A0019 50%, #4A000E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold Glow Utility */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.55);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Traditional temple borders and repeating dividers */
+.border-traditional {
+  border-image: linear-gradient(to right, #7A0019, #D4AF37, #7A0019) 1;
+}
+
+/* Mandala slow spinning */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+/* Pulse soft glow */
+.glow-gold-text {
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
