@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #FFFDF9;
+  --color-cream: #FDFBF7;
+  --color-gold-champagne: #D4AF37;
+  --color-gold-light: #F5E5C9;
+  --color-gold-dark: #C5A059;
+  --color-rose-gold: #E0A899;
+  --color-soft-green: #8FA89B;
+  --color-pastel-pink: #FFF0F2;
+  --color-light-beige: #F5ECE1;
+  --color-wedding-charcoal: #5C5043;
+  
+  /* Traditional Indian Colors */
+  --color-genda-yellow: #F5B041;
+  --color-genda-orange: #E67E22;
+  --color-genda-light: #F9E79F;
+  --color-mogra-white: #FFFDF9;
+
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-handwritten: "Great Vibes", cursive;
+  --font-hindi: "Noto Serif Devanagari", serif;
+  --font-cinzel: "Cinzel", serif;
+  --font-cinzel-dec: "Cinzel Decorative", serif;
+}
+
+/* Base resets & scroll behavior */
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-cormorant);
+  background-color: var(--color-cream);
+  color: var(--color-wedding-charcoal);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Custom scrollbar matching our gold/orange theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-genda-orange);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-champagne);
+}
+
+/* Glowing animations */
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(245, 176, 65, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(245, 176, 65, 0.8));
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s infinite ease-in-out;
+}
+
+/* Swinging temple bells and marigold strings */
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(1.5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-swing {
+  animation: swing 4.5s infinite ease-in-out;
+  transform-origin: top center;
+}
+
+/* Floating soft motion */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 5s infinite ease-in-out;
+}
+
+/* Spinning designs */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 70s linear infinite;
+}
+
+/* Diya Flicker Animation */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 5px rgba(230, 126, 34, 0.8));
+  }
+  50% {
+    transform: scale(1.08) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(245, 176, 65, 1));
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1.4s infinite alternate ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Indian Jharokha (Arch) Clip Path */
+.jharokha-clip {
+  clip-path: polygon(50% 0%, 83% 12%, 100% 38%, 100% 100%, 0% 100%, 0% 38%, 17% 12%);
+}
+
+/* Traditional Gold Border Style */
+.gold-border {
+  border-image: linear-gradient(to right, #C5A059, #F5E5C9, #C5A059) 1;
+}
+
+/* Genda phool shadows */
+.genda-shadow {
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.12);
+}
+.card-shadow-hover:hover {
+  box-shadow: 0 15px 30px rgba(245, 176, 65, 0.2);
+  transform: translateY(-4px);
+  transition: all 0.4s ease;
+}
